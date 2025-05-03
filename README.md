@@ -6,3 +6,4 @@ A collection of loose scripts I use to help manage my business. Parsing bank ext
 
 - [Amazon Invoices](./amazon_invoices/) - Split and rename Amazon invoices into a file per invoice.
 - [Montepio Parser](./montepio_parser/]) - Parse the Montepio bank extract into a desired format.
+- [TOC Online Parser](./toc_online_parser/) - Parses and merges multiple bank statement files as downloaded from TOC online.
