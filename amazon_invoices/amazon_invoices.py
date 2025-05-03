@@ -27,14 +27,13 @@ def extract_invoice_info(text, fallback_index):
     }
 
     # Extract invoice number
-    num_match = re.search(r"Número de la factura\s+([A-Z0-9]+)", text, re.IGNORECASE)
+    num_match = re.search(r"Número de la factura\s+([\w\-]+)", text, re.IGNORECASE)
     invoice_number = num_match.group(1) if num_match else f"unknown_{fallback_index}"
 
-    # Updated date pattern
     date_match = re.search(
-        r"Fecha de la factura(?:/Fecha de la entrega)?\s+(\d{1,2})\s+([a-záéíóúñ]+)\s+(\d{4})",
+        r"fecha.*?(\d{1,2})\s+([a-záéíóúñ]+)\s+(\d{4})",
         text,
-        re.IGNORECASE
+        re.IGNORECASE | re.DOTALL
     )
     if date_match:
         day, month_name, year = date_match.groups()
