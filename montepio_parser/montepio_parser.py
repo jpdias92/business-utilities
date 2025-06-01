@@ -45,7 +45,7 @@ df = pd.read_csv(
 df_clean = df[['DATA MOV.', 'DESCRIÇÃO', 'IMPORTÂNCIA']].copy()
 
 # Convert "DATA MOV." to date
-df_clean['DATA MOV.'] = pd.to_datetime(df_clean['DATA MOV.'], errors='coerce', dayfirst=True)
+df_clean['DATA MOV.'] = pd.to_datetime(df_clean['DATA MOV.'], errors='coerce')
 
 # Clean and convert "IMPORTÂNCIA" to proper number
 df_clean['IMPORTÂNCIA'] = (
